@@ -2,13 +2,15 @@ import React, {useState} from 'react';
 import "./SongManagerBar.css";
 import { Form, Button } from 'react-bootstrap';
 import { IoFilterOutline as FilterIcon} from "react-icons/io5";
-
-
+import {searchForSongs} from "../../logic/searchForSongs";
+import SearchListPopup from "./SearchListPopup";
 
 function SongManagerBar(props) {
   const [inputName, setInputName] = useState('');
   const [submitPressed, setSubmitPressed] = useState(false);
   const [query, setQuery] = useState('');
+  const [songsFound, setSongsFound] = useState(null);
+  
   const handleSubmit = (e) => {
     e.preventDefault();  
     props.setUser(inputName);
@@ -16,9 +18,25 @@ function SongManagerBar(props) {
     console.log("Input Name: " + inputName);
   }
 
-  const handleSearch = () => {
+  const handleSearch = async () => {
     console.log("Search Query: " + query);
+    const trimmedQuery = query.trim()
+    if (!trimmedQuery) {
+      return;
+    }
+
+    // Format query string for Spotify API Search Request
+    const queryString = trimmedQuery.replace(" ", "+");
+
+    try {
+      setSongsFound(await searchForSongs(queryString));
+      console.log("songs found:", songsFound);
+    } catch (error) {
+      console.error(error);
+    }
   }
+
+  const resetSongsFound = () => setSongsFound(null);
 
   return (
     <div className="manager-bar">
@@ -53,6 +71,10 @@ function SongManagerBar(props) {
             style={{fontSize: '14px', backgroundColor: 'mediumslateblue'}}>Search</Button>
         </Form>
         <Button variant="outline-dark border-0" className="hover-icon"><FilterIcon /></Button>
+
+        { 
+        songsFound && <SearchListPopup show={true} resetSongs={resetSongsFound} songs={songsFound}/> 
+        }
       </div>   
     </div>
   )
