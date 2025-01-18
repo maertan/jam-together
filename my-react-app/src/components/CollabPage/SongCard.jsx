@@ -11,15 +11,14 @@ function SongCard({id, user, songInfo, upvotes, downvotes}) {
     // const [likes, setLikes] = useState(0)
     // const [dislikes, setDislikes] = useState(0)
 
-
-
     return (
         <div className="card"> 
             <div> 
                 
-                <img src={songInfo.img} width="100" height="100"/> 
+            <img src={songInfo.image_url || "https://i.scdn.co/image/ab67616d0000b273fd8d7a8d96871e791cb1f626"} /> 
                 <p> {songInfo.artist} </p>
             </div>
+            
 
             <div>
                 <ul>
