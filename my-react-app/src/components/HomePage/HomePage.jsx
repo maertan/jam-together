@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container';
-import JoinCreate from './HomePage/JoinCreate';
-import AboutBox from './HomePage/AboutBox';
+import JoinCreate from './JoinCreate';
+import AboutBox from './AboutBox';
 
 const HomePage = () => {
   return (
