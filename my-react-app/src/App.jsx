@@ -3,7 +3,7 @@ import './App.css'
 import { supabase } from './client';
 import { Route, Routes } from 'react-router-dom';
 import NavBar from "./components/NavBar";
-import HomePage from "./components/HomePage";
+import HomePage from "./components/HomePage/HomePage";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
