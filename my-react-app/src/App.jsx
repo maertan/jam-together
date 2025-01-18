@@ -1,9 +1,9 @@
-import { useState, useEffect} from 'react'
 import './App.css'
-import { supabase } from './client';
 import { Route, Routes } from 'react-router-dom';
 import NavBar from "./components/NavBar";
-import HomePage from "./components/HomePage/HomePage";
+import HomePage from './components/HomePage/HomePage';
+import CollabPage from "./components/CollabPage"
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -14,6 +14,7 @@ function App() {
       <NavBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/collab/:code" element={<CollabPage />} />
         </Routes>
     </>
   );
