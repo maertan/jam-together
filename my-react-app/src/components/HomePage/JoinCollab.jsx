@@ -17,11 +17,11 @@ const JoinCollab = () => {
 
   return (
     <>
-    <Container>
-      <h1>Join Collab</h1>
+    <Container className='pb-5'>
+      <h1>Join Collab Session</h1>
       <Form>
             <Form.Group controlId="code">
-              <Form.Label>Enter Collab session code</Form.Label>
+              <Form.Label>Enter session code:</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter code"
@@ -29,7 +29,7 @@ const JoinCollab = () => {
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Button variant="primary" onClick={handleJoinCollab} disabled={!code}>
+            <Button variant="primary" onClick={handleJoinCollab} disabled={!code} className='m-2'>
               Join Collab
             </Button>
           </Form>
