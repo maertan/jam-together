@@ -12,7 +12,7 @@ const JoinCollab = () => {
   };
 
   const handleJoinCollab = () => {
-    navigate(`/collab/${code}`)
+    navigate(`/collab/${code}`,  { state: { code } });
   };
 
   return (

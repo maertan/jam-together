@@ -16,7 +16,8 @@ const CreateCollab = () => {
   const handleCreateSession = async () => {
     console.log('Collab session created:', name);
     const code = await createCollab(name)
-    navigate(`/collab/${code}`)
+    navigate(`/collab/${code}`,  { state: { code } });
+
   };
   return (
     <>
