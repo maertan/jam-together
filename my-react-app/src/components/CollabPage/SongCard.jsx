@@ -6,48 +6,35 @@ import Reactions from './Reactions';
 function SongCard({id, user, songInfo, upvotes, downvotes}) {
   return (
     <Container
-      className="my-3 p-3" 
+      className="my-3 p-2" 
       style={{
-        backgroundColor: "cornflowerblue",
-        border: "2px solid #ccc",
+        backgroundColor: "#2f4f6f",
         borderRadius: "20px",
-        minWidth: "500px",
+        width: "75%",
       }}
-    >
-      {/* ------ TOP ROW ------ */}
-      <Row className="align-items-center">
-        {/* Top Left: Image */}
+    >      <Row className="align-items-center">
         <Col xs="auto">
           <img
-            src={
-              songInfo.image_url ||
-              "https://i.scdn.co/image/ab67616d0000b273fd8d7a8d96871e791cb1f626"
-            }
+            src={songInfo.image_url}
             alt={songInfo.artist}
             style={{
-              width: "10em",
-              height: "10em",
+              width: "4em",
+              height: "4em",
               objectFit: "cover",
               borderRadius: "10%",
             }}
           />
         </Col>
 
-        {/* Top Right: Song Name */}
-        <Col className="text-end">
-          <h2 style={{ margin: 0 }}>{songInfo.title}</h2>
+        <Col >
+          <h4 style={{ margin: 0 }}>{songInfo.title}</h4>
         </Col>
-      </Row>
-
-      {/* ------ BOTTOM ROW ------ */}
-      <Row className="mt-3 align-items-center">
-        {/* Bottom Left: Artist Name */}
-        <Col xs="auto">
+        <Col xs="auto" className="text-end">
           <p style={{ margin: 0, fontWeight: "bold" }}>{songInfo.artist}</p>
         </Col>
-
-        {/* Bottom Right: Upvote / Downvote */}
-        <Reactions songId={songInfo.id} user={user} upvotes ={upvotes} downvotes ={downvotes} votes={songInfo.votes} />
+        <Col xs="auto">
+            <Reactions songId={songInfo.id} user={user} upvotes ={upvotes} downvotes ={downvotes} votes={songInfo.votes} />
+        </Col>
       </Row>
     </Container>
   );

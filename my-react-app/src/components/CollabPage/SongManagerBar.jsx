@@ -23,7 +23,7 @@ function SongManagerBar(props) {
   return (
     <div className="manager-bar">
       <Form className="d-flex align-items-center ms-3 col-4" style={{ minWidth: '45%' }}> 
-        <Form.Label className="col-3 mb-0" style={{ fontSize: '14px' }}>Enter Your Name: </Form.Label>
+        <Form.Label className="col-3 mb-0" style={{ fontSize: '19px' }}>Enter Your Name: </Form.Label>
         <Form.Control 
           type="text" 
           id="name" 

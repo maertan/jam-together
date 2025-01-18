@@ -13,6 +13,7 @@ const SongList = (props) => {
 
     const handleSongLoading = async () => {
         try {
+            
             const songList = await loadSongList(props.collab_id)
             if (songList) {
                 setSongCards(songList);
