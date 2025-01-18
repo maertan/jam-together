@@ -36,6 +36,11 @@ function SongCard({id, user, songInfo, upvotes, downvotes, handleSongLoading}) {
         <Col xs="auto">
             <Reactions songId={songInfo.id} user={user} upvotes ={upvotes} downvotes ={downvotes} votes={songInfo.votes} />
         </Col>
+        <Col className="text-end">
+          {songInfo.owner && user == songInfo.owner && 
+            <Delete songId={songInfo.id} handleSongLoading={handleSongLoading}/>
+          }
+        </Col>
       </Row>
     </Container>
   );
