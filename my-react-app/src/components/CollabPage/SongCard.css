@@ -1,3 +1,31 @@
 .card {
-    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+    background-image: linear-gradient(to right, red,orange,green,blue,indigo);
+    margin: 15px;
+    border-radius: 20px;
+    display: flex;
+    min-width: 500 px;
+    border-style: solid;
+    /* box-shadow: 3px 3px 3px 3px; */
+
+}
+
+img {
+    width:100px;
+    height:100px;
+    border-radius: 10px;
+    margin: 5px;
+
+}
+
+button {
+    margin: 3px;
+}
+
+.upvote-active {
+    color: greenyellow
+
+}
+
+.downvote-active {
+    color: rgb(206, 115, 115)
 }
