@@ -1,15 +1,15 @@
 .nav {
-  width: 100vw;
+  width: 75vw;
   margin-left: 0;    
   margin-right: 0;
-  height: 20vh;
+  height: 10vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 0 4rem;
-  padding-left: 6rem;
+  padding-left: 12rem;
   gap: 2rem;
-  background-color: #AF69EE;
+  /* background-color: #39AA14; */
   color: white;
   box-sizing: border-box; 
   z-index: 1000;
@@ -37,6 +37,6 @@
 }
 
 #logo {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 }

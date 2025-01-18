@@ -6,7 +6,7 @@ import AboutBox from './AboutBox';
 const HomePage = () => {
   return (
     <>
-      <Container fluid="true" className="p-4 mb-4 w-100"> 
+      <Container  className="p-4 mb-4 w-75 justify-content-center align-items-center"> 
         <AboutBox />
       </Container>
       <Container fluid="true" className="p-4 w-100"> 

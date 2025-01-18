@@ -41,7 +41,7 @@ function SongManagerBar(props) {
   return (
     <div className="manager-bar">
       <Form className="d-flex align-items-center ms-3 col-4" style={{ minWidth: '45%' }}> 
-        <Form.Label className="col-3 mb-0" style={{ fontSize: '14px' }}>Enter Your Name: </Form.Label>
+        <Form.Label className="col-3 mb-0" style={{ fontSize: '19px' }}>Enter Your Name: </Form.Label>
         <Form.Control 
           type="text" 
           id="name" 
@@ -53,6 +53,7 @@ function SongManagerBar(props) {
           style={{ minWidth: '80px' }}></Form.Control>
         <Button onClick={handleSubmit} disabled={!inputName} className="border-0" style={{fontSize: '14px', backgroundColor: 'mediumslateblue'}}>Submit</Button>
       </Form>
+      {/* <TestAddButton /> */}
       <div className="d-flex justify-content-end me-5" >
         <Form className="d-flex align-items-center"> 
           <Form.Control 

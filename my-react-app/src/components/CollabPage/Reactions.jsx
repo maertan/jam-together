@@ -10,8 +10,8 @@ const Reactions = (props) => {
     const [upvoteCount, setUpvoteCount] = useState(props.upvotes)
     const [downvoteCount, setDownvoteCount] = useState(props.downvotes)
 
-    const [userVote, setUserVote] = useState(null); // Track user's current vote
-    const [votes, setVotes] = useState(props.votes || {}); // Track all votes as a JSON object
+    const [userVote, setUserVote] = useState(null); 
+    const [votes, setVotes] = useState(props.votes || {}); 
     const fetchVotes = async () => {
         const { data, error } = await supabase
             .from('songs')
@@ -22,7 +22,7 @@ const Reactions = (props) => {
         if (error) {
             console.error("Error fetching votes:", error.message);
         } else {
-            const currentVotes = data.votes || {};  // Get votes JSON or an empty object if null
+            const currentVotes = data.votes || {};  
             await setVotes(currentVotes);
             await setUserVote(currentVotes[user]);  
             if (currentVotes[user] == 1) {
@@ -101,12 +101,13 @@ const Reactions = (props) => {
     };
     return (
         <ul className="btn-container">
-            <button className={`btn ${activeBtn === "upvote" ? "upvote-active" : ""}`} onClick={() => handleClick("upvote")}>
+            <button className={`btn ${activeBtn === "upvote" ? "upvote-active" : ""}`} onClick={() => handleClick("upvote")}
+            style={{color: "white"}}>
                 <span> <FaThumbsUp /> </span>
                     {upvoteCount}
             </button>
 
-            <button className={`btn ${activeBtn === "downvote" ? "downvote-active" : ""}`} onClick={() => handleClick("downvote")}>
+            <button className={`btn ${activeBtn === "downvote" ? "downvote-active" : ""}`} onClick={() => handleClick("downvote")} style={{color: "white"}}>
                     <span> <FaThumbsDown/> </span>
                     {downvoteCount}
             </button>
