@@ -1,34 +1,8 @@
-.card {
-    background-color: cornflowerblue !important;
-    margin: 15px;
-    border-radius: 20px;
-    display: flex;
-    min-width: 500 px;
-    border-style: solid;
-    
-    /* box-shadow: 3px 3px 3px 3px; */
-
-}
-
-.card img {
-    border-radius: 20%;
-    margin: 5px;
-    width: 10em;
-    height: 10em;
-    object-fit: cover;
-}
-
-
-
-button {
-    margin: 3px;
-}
-
 .upvote-active {
-    color: greenyellow !important
-
-}
-
-.downvote-active {
-    color: rgb(206, 115, 115) !important
-}
+    color: greenyellow !important;
+  }
+  
+  .downvote-active {
+    color: rgb(206, 115, 115) !important;
+  }
+  
