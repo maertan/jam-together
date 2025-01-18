@@ -24,7 +24,7 @@ const SongList = (props) => {
 
     useEffect(() => {
         handleSongLoading();
-    }, [props.collab_id])
+    }, [props.collab_id, props.user])
 
     if (error) {
         return <div>Error: {error}</div>;
