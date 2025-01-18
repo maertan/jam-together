@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types'; 
 import './SongList.css';
 import SongCard from './SongCard.jsx';
 import { loadSongList } from '../../logic/loadSongList.jsx';
 
-function SongList({collab_id}) {
+const SongList = (props) => {
     const [error, setError] = useState("");
     const [songCards, setSongCards] = useState([
     ]);
 
-    console.log("Songlist - Final collab_id:", collab_id); // Debug final collab_id XHlvyF6 (L NOT I)
+    console.log("Songlist - Final collab_id:", props.collab_id); // Debug final collab_id XHlvyF6 (L NOT I)
 
     const handleSongLoading = async () => {
         try {
-            const songList = await loadSongList(collab_id)
+            const songList = await loadSongList(props.collab_id)
             if (songList) {
                 setSongCards(songList);
             }
@@ -23,7 +24,7 @@ function SongList({collab_id}) {
 
     useEffect(() => {
         handleSongLoading();
-    }, [collab_id])
+    }, [props.collab_id])
 
     if (error) {
         return <div>Error: {error}</div>;
@@ -36,9 +37,10 @@ function SongList({collab_id}) {
             {
                 songCards.map((song) => (
                     <SongCard 
-                        songInfo={{title: song.title, artist: song.artist, img: song.img}}
-                        upvotes= {song.likes}
-                        downvotes = {song.dislikes}
+                        user = {props.user}
+                        songInfo={{id:song.id, title: song.title, artist: song.artist, img: song.img}}
+                        upvotes= {song.upvotes}
+                        downvotes = {song.downvotes}
                     />
 
                 ))
@@ -48,6 +50,11 @@ function SongList({collab_id}) {
     )
 
 }
+
+SongList.propTypes = {
+    collab_id: PropTypes.string.isRequired, 
+    user: PropTypes.string.isRequired, 
+};
 
 export default SongList;
 
