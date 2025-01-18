@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import "./SongManagerBar.css";
 import { Form, Button } from 'react-bootstrap';
 import { IoFilterOutline as FilterIcon} from "react-icons/io5";
-
+// import TestAddButton from "./TestAddButton";
 
 
 function SongManagerBar(props) {
@@ -35,6 +35,7 @@ function SongManagerBar(props) {
           style={{ minWidth: '80px' }}></Form.Control>
         <Button onClick={handleSubmit} disabled={!inputName} className="border-0" style={{fontSize: '14px', backgroundColor: 'mediumslateblue'}}>Submit</Button>
       </Form>
+      {/* <TestAddButton /> */}
       <div className="d-flex justify-content-end me-5" >
         <Form className="d-flex align-items-center"> 
           <Form.Control 
