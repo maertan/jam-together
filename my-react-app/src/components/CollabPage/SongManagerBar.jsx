@@ -6,13 +6,15 @@ import { IoFilterOutline as FilterIcon} from "react-icons/io5";
 
 
 
-function SongManagerBar() {
+function SongManagerBar(props) {
   const [inputName, setInputName] = useState('');
+  const [submitPressed, setSubmitPressed] = useState(false);
   const [query, setQuery] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();  
-    props.setUser(inputName)
-    console.log("Input Name: " + inputName)
+    props.setUser(inputName);
+    setSubmitPressed(true);
+    console.log("Input Name: " + inputName);
   }
 
   const handleSearch = () => {
@@ -32,7 +34,7 @@ function SongManagerBar() {
           onChange={(e) => setInputName(e.target.value)}
           className="col-xs-1 ms-1 me-2 form-control-sm"
           style={{ minWidth: '80px' }}></Form.Control>
-        <Button onClick={handleSubmit} className="border-0" style={{fontSize: '14px', backgroundColor: 'mediumslateblue'}}>Submit</Button>
+        <Button onClick={handleSubmit} disabled={!inputName} className="border-0" style={{fontSize: '14px', backgroundColor: 'mediumslateblue'}}>Submit</Button>
       </Form>
       <div className="d-flex justify-content-end me-5" >
         <Form className="d-flex align-items-center"> 
@@ -41,13 +43,13 @@ function SongManagerBar() {
             placeholder="Search for a song"
             value={query} 
             onChange={(e) => setQuery(e.target.value)}
-            disabled={!inputName}
+            disabled={!submitPressed}
             className="col-xs-1 me-2 form-control-sm"
             style={{ minWidth: '150px' }}
           />
           <Button 
             onClick={handleSearch} 
-            disabled={!inputName}
+            disabled={!submitPressed}
             className="border-0 me-2" 
             style={{fontSize: '14px', backgroundColor: 'mediumslateblue'}}>Search</Button>
         </Form>
