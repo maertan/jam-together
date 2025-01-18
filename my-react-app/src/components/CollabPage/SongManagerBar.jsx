@@ -33,7 +33,7 @@ function SongManagerBar(props) {
           onChange={(e) => setInputName(e.target.value)}
           className="col-xs-1 ms-1 me-2 form-control-sm"
           style={{ minWidth: '80px' }}></Form.Control>
-        <Button onClick={handleSubmit} disabled={!inputName} className="border-0" style={{fontSize: '14px', backgroundColor: 'mediumslateblue'}}>Submit</Button>
+        <Button type="submit" onClick={handleSubmit} disabled={!inputName} className="border-0" style={{fontSize: '14px', backgroundColor: 'mediumslateblue'}}>Submit</Button>
       </Form>
       <div className="d-flex justify-content-end me-5" >
         <Form className="d-flex align-items-center"> 
