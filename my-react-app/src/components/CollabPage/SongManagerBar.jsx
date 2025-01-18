@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./SongManagerBar.css";
 import { IoFilterOutline as FilterIcon} from "react-icons/io5";
 import { MdAddCircleOutline as AddIcon } from "react-icons/md";
@@ -6,16 +6,24 @@ import { AiOutlineMinusCircle as DeleteIcon } from "react-icons/ai";
 
 
 
-function SongManagerBar() {
+const SongManagerBar = (props) => {
   // add action attribute for form
+  const [inputName, setInputName] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();  
+    props.setUser(inputName)
+    console.log("Input Name: " + inputName)
+  }
+
   return (
-    <div class="manager-bar">
-      <form> 
-        <label for="name">Enter Your Name: </label>
-        <input type="text" id="name" name="name" required></input>
-        <button type="submit">Submit</button>
+    <div className="manager-bar">
+      <form > 
+        <label form="name">Enter Your Name: </label>
+        <input type="text" id="name" name="name" required onChange={(e) => setInputName(e.target.value)}></input>
+        <button type="submit" onClick={handleSubmit}>Submit</button>
       </form>
-      <div class="edit-bar">
+      <div className="edit-bar">
         <button type="edit"><FilterIcon /></button>
         <button type="edit"><AddIcon /></button>
         <button type="edit"><DeleteIcon /></button>
