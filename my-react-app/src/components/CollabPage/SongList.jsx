@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './SongList.css';
-// import SongCard from './SongCard.jsx';
+import SongCard from './SongCard.jsx';
 
 function SongList() {
     const [error, setError] = useState("");
@@ -15,10 +15,11 @@ function SongList() {
         <div>
             {
                 songCards.map((song) => (
-                    <ul> 
-                        <img src={song.img} width="100" height="100"/>
-                        Song: {song.title}, Artist: {song.artist}, Likes: {song.likes}, Dislikes: {song.dislikes}
-                    </ul>
+                    <SongCard 
+                        songInfo={{title: song.title, artist: song.artist, img: song.img}}
+                        upvotes= {song.likes}
+                        downvotes = {song.dislikes}
+                    />
 
                 ))
             }
@@ -29,3 +30,8 @@ function SongList() {
 }
 
 export default SongList;
+
+// <ul> 
+// <img src={song.img} width="100" height="100"/>
+// Song: {song.title}, Artist: {song.artist}, Likes: {song.likes}, Dislikes: {song.dislikes}
+// </ul>
