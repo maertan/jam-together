@@ -12,6 +12,7 @@ function SongCard({songInfo, upvotes, downvotes}) {
     const [activeBtn, setActiveBtn] = useState("none") //https://www.youtube.com/watch?v=6L06rxEoX0o
     const [upvoteCount, setUpvoteCount] = useState(upvotes)
     const [downvoteCount, setDownvoteCount] = useState(downvotes)
+    console.log(songInfo)
 
     // Handle the case of an upvote/downvote button being clicked
     const handleClick = (reaction) => {
@@ -53,9 +54,10 @@ function SongCard({songInfo, upvotes, downvotes}) {
         <div className="card"> 
             <div> 
                 
-                <img src={songInfo.img} width="100" height="100"/> 
+            <img src={songInfo.image_url || "https://i.scdn.co/image/ab67616d0000b273fd8d7a8d96871e791cb1f626"} /> 
                 <p> {songInfo.artist} </p>
             </div>
+            
 
             <div>
                 <ul>

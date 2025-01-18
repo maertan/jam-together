@@ -36,7 +36,7 @@ function SongList({collab_id}) {
             {
                 songCards.map((song) => (
                     <SongCard 
-                        songInfo={{title: song.title, artist: song.artist, img: song.img}}
+                        songInfo={{title: song.title, artist: song.artist, image_url: song.image_url}}
                         upvotes= {song.upvotes}
                         downvotes = {song.downvotes}
                     />
