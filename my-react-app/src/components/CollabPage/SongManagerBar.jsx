@@ -1,34 +1,59 @@
 import React, {useState} from 'react';
 import "./SongManagerBar.css";
+import { Form, Button } from 'react-bootstrap';
 import { IoFilterOutline as FilterIcon} from "react-icons/io5";
-import { MdAddCircleOutline as AddIcon } from "react-icons/md";
-import { AiOutlineMinusCircle as DeleteIcon } from "react-icons/ai";
 
 
 
-const SongManagerBar = (props) => {
-  // add action attribute for form
+function SongManagerBar(props) {
   const [inputName, setInputName] = useState('');
-
+  const [submitPressed, setSubmitPressed] = useState(false);
+  const [query, setQuery] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();  
-    props.setUser(inputName)
-    console.log("Input Name: " + inputName)
+    props.setUser(inputName);
+    setSubmitPressed(true);
+    console.log("Input Name: " + inputName);
+  }
+
+  const handleSearch = () => {
+    console.log("Search Query: " + query);
   }
 
   return (
     <div className="manager-bar">
-      <form > 
-        <label form="name">Enter Your Name: </label>
-        <input type="text" id="name" name="name" required onChange={(e) => setInputName(e.target.value)}></input>
-        <button type="submit" onClick={handleSubmit}>Submit</button>
-      </form>
-      <div className="edit-bar">
-        <button type="edit"><FilterIcon /></button>
-        <button type="edit"><AddIcon /></button>
-        <button type="edit"><DeleteIcon /></button>
-      </div>
-      
+      <Form className="d-flex align-items-center ms-3 col-4" style={{ minWidth: '45%' }}> 
+        <Form.Label className="col-3 mb-0" style={{ fontSize: '14px' }}>Enter Your Name: </Form.Label>
+        <Form.Control 
+          type="text" 
+          id="name" 
+          name="name" 
+          required 
+          value={inputName}
+          onChange={(e) => setInputName(e.target.value)}
+          className="col-xs-1 ms-1 me-2 form-control-sm"
+          style={{ minWidth: '80px' }}></Form.Control>
+        <Button onClick={handleSubmit} disabled={!inputName} className="border-0" style={{fontSize: '14px', backgroundColor: 'mediumslateblue'}}>Submit</Button>
+      </Form>
+      <div className="d-flex justify-content-end me-5" >
+        <Form className="d-flex align-items-center"> 
+          <Form.Control 
+            type="text" 
+            placeholder="Search for a song"
+            value={query} 
+            onChange={(e) => setQuery(e.target.value)}
+            disabled={!submitPressed}
+            className="col-xs-1 me-2 form-control-sm"
+            style={{ minWidth: '150px' }}
+          />
+          <Button 
+            onClick={handleSearch} 
+            disabled={!submitPressed}
+            className="border-0 me-2" 
+            style={{fontSize: '14px', backgroundColor: 'mediumslateblue'}}>Search</Button>
+        </Form>
+        <Button variant="outline-dark border-0" className="hover-icon"><FilterIcon /></Button>
+      </div>   
     </div>
   )
 

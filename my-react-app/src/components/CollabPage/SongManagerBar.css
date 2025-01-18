@@ -10,49 +10,21 @@
   box-sizing: border-box; 
 }
 
-form {
-  display: flex;
-  align-items: center;
-  min-width: 150px;
-  padding-left: 5%;
-  box-sizing: border-box;
+button:hover {
+  background-color:cornflowerblue !important;
 }
 
-label {
-  margin: 0.5rem;
-  font-size: small;
+button:active {
+  background-color:aliceblue!important; 
+  border-color: aliceblue !important;
 }
 
-input {
-  flex-grow: 1;
-  margin: 0 0 0 5rem;
-  height: 3vh;
-  min-width: 50px;
-  
+.hover-icon:hover {
+  background-color: mediumslateblue !important;
 }
 
-button[type="submit"] {
-  font-size: small;
-  background-color: black;
-  color: white;
-  border: solid white 3px;
-  border-radius: 15px; 
-  margin-left: 5px;
-  padding: 5px 8px 5px 8px;
-}
-
-.edit-bar {
-  position: absolute;
-  right: 0;
-  justify-content: flex-end;
-  display: flex;
-  width: 40vw;
-  padding-right: 5%;
-}
-
-button[type="edit"] {
-  background-color: transparent;
-  border: none;
+.hover-icon:active {
+  background-color: aliceblue !important;
 }
 
 
