@@ -12,31 +12,30 @@ const Reactions = (props) => {
 
     const [userVote, setUserVote] = useState(null); // Track user's current vote
     const [votes, setVotes] = useState(props.votes || {}); // Track all votes as a JSON object
+    const fetchVotes = async () => {
+        const { data, error } = await supabase
+            .from('songs')
+            .select('votes, upvotes, downvotes')
+            .eq('id', props.songId)
+            .single();
 
-    useEffect(() => {
-        const fetchVotes = async () => {
-            const { data, error } = await supabase
-                .from('songs')
-                .select('votes, upvotes, downvotes')
-                .eq('id', props.songId)
-                .single();
-
-            if (error) {
-                console.error("Error fetching votes:", error.message);
-            } else {
-                const currentVotes = data.votes || {};  // Get votes JSON or an empty object if null
-                await setVotes(currentVotes);
-                await setUserVote(currentVotes[user]);  
-                if (currentVotes[user] == 1) {
-                    setActiveBtn("upvote")
-                } else if (currentVotes[user] == -1) {
-                    setActiveBtn("downvote");
-                }
-                await setUpvoteCount(data.upvotes);
-                await setDownvoteCount(data.downvotes);
+        if (error) {
+            console.error("Error fetching votes:", error.message);
+        } else {
+            const currentVotes = data.votes || {};  // Get votes JSON or an empty object if null
+            await setVotes(currentVotes);
+            await setUserVote(currentVotes[user]);  
+            if (currentVotes[user] == 1) {
+                setActiveBtn("upvote")
+            } else if (currentVotes[user] == -1) {
+                setActiveBtn("downvote");
             }
-        };
-
+            await setUpvoteCount(data.upvotes);
+            await setDownvoteCount(data.downvotes);
+        }
+    };
+    useEffect(() => {
+ 
         fetchVotes();
     }, [props.songId, user]);
 
@@ -55,6 +54,10 @@ const Reactions = (props) => {
 
     // Handle the case of an upvote/downvote button being clicked
     const handleClick = async (reaction) => {
+        if (!user) {  
+            alert("Please enter a name before voting!");
+            return;
+        }
         let newVotes = {...votes};
         let newUpvotes = upvoteCount;
         let newDownvotes = downvoteCount;
