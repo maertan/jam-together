@@ -10,4 +10,21 @@
   box-sizing: border-box; 
 }
 
+button:hover {
+  background-color:cornflowerblue !important;
+}
+
+button:active {
+  background-color:aliceblue!important; 
+  border-color: aliceblue !important;
+}
+
+.hover-icon:hover {
+  background-color: mediumslateblue !important;
+}
+
+.hover-icon:active {
+  background-color: aliceblue !important;
+}
+
 
