@@ -1,5 +1,5 @@
 import React from 'react';
-import appLogo from "../assets/icon.jpg";
+import appLogo from "../assets/icon.png";
 import './Navbar.css';
 import { Link } from "react-router-dom";
 
@@ -9,11 +9,11 @@ function NavBar() {
       <ul>
         <li>
           <Link to="/">
-            <img src={appLogo} alt="SingTogether Icon" id="logo" />
+            <img src={appLogo} alt="JamTogether Icon" id="logo" />
           </Link>
         </li>
         <li>
-          <Link to="/" className="site-title">SingTogether</Link>
+          <Link to="/" className="site-title"><h1>JamTogether</h1></Link>
         </li>
       </ul>
     </nav>
