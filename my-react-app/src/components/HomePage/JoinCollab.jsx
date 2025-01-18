@@ -1,9 +1,9 @@
 import React from 'react'
 
-const JoinSession = () => {
+const JoinCollab = () => {
   return (
     <>
-    <h1>Join Session</h1>
+    <h1>Join Collab</h1>
     <div>
         input box for joining session
     </div>
@@ -11,4 +11,4 @@ const JoinSession = () => {
   )
 }
 
-export default JoinSession
+export default JoinCollab

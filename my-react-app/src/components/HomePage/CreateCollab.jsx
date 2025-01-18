@@ -1,9 +1,9 @@
 import React from 'react'
 
-const CreateSession = () => {
+const CreateCollab = () => {
   return (
     <>
-    <h1>Creating Session</h1>
+    <h1>Create new Collab</h1>
     <div>
         input box for creating session
     </div>
@@ -11,4 +11,4 @@ const CreateSession = () => {
   )
 }
 
-export default CreateSession
+export default CreateCollab
