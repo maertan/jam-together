@@ -24,7 +24,7 @@ function SongCard({id, user, songInfo, upvotes, downvotes}) {
                 <ul>
                     <strong> {songInfo.title} </strong>
                 </ul>
-                <Reactions songId={songInfo.id} user = {user} upvotes = {upvotes} downvotes = {downvotes} />
+                <Reactions songId={songInfo.id} user={user} upvotes ={upvotes} downvotes ={downvotes} votes={songInfo.votes} />
             </div>
              
         </div>
