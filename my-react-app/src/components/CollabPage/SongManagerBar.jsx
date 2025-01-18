@@ -23,7 +23,6 @@ function SongManagerBar() {
       </Form>
       <div className="d-flex justify-content-end me-5">
         <Button variant="outline-dark"><FilterIcon /></Button>
-        <Button variant="outline-dark"><AddIcon /></Button>
         <Button variant="outline-dark"><DeleteIcon /></Button>
       </div>   
     </div>
