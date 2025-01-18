@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './CollabPage.css';
 import SongManagerBar from "./SongManagerBar"
 import SongList from "./SongList"
@@ -9,20 +9,21 @@ function CollabPage() {
     const { code } = useParams(); // Extract `code` from the URL
     const location = useLocation(); // Access the navigation `state`
     const collab_id = (location.state?.code || code).trim(); // Fallback to URL if `state` is not available
-
+    
     console.log("CollabPage - URL code:", code); // Debug URL code
     console.log("CollabPage - State code:", location.state?.code); // Debug state code
     console.log("CollabPage - Final collab_id:", collab_id); // Debug final collab_id
+
+    const [user, setUser] = useState('')
 
     if (!collab_id) {
         return <div>Error: No collab ID provided</div>;
     }
 
-
     return (
         <div>     
-            <SongManagerBar />
-            <SongList collab_id={collab_id}/>
+            <SongManagerBar setUser = {setUser}/>
+            <SongList collab_id={collab_id} user={user}/>
         </div>
     )
 }
