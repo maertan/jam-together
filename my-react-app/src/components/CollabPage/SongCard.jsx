@@ -1,43 +1,9 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
+import Reactions from './Reactions';
 
-function SongCard({ songInfo, upvotes, downvotes }) {
-  const [activeBtn, setActiveBtn] = useState("none");
-  const [upvoteCount, setUpvoteCount] = useState(upvotes);
-  const [downvoteCount, setDownvoteCount] = useState(downvotes);
-
-  const handleClick = (reaction) => {
-    if (activeBtn === "none") {
-      // first click
-      if (reaction === "upvote") {
-        setUpvoteCount(upvoteCount + 1);
-        setActiveBtn("upvote");
-      } else {
-        setDownvoteCount(downvoteCount + 1);
-        setActiveBtn("downvote");
-      }
-    } else if (activeBtn === reaction) {
-      // undo the same reaction
-      if (reaction === "upvote") {
-        setUpvoteCount(upvoteCount - 1);
-      } else {
-        setDownvoteCount(downvoteCount - 1);
-      }
-      setActiveBtn("none");
-    } else {
-      // switch reaction
-      if (reaction === "upvote") {
-        setDownvoteCount(downvoteCount - 1);
-        setUpvoteCount(upvoteCount + 1);
-        setActiveBtn("upvote");
-      } else {
-        setUpvoteCount(upvoteCount - 1);
-        setDownvoteCount(downvoteCount + 1);
-        setActiveBtn("downvote");
-      }
-    }
-  };
+function SongCard({user, songInfo, upvotes, downvotes}) {
 
   return (
     <Container
@@ -82,24 +48,7 @@ function SongCard({ songInfo, upvotes, downvotes }) {
         </Col>
 
         {/* Bottom Right: Upvote / Downvote */}
-        <Col className="text-end">
-          <Button
-            variant="light"
-            className={activeBtn === "upvote" ? "upvote-active" : ""}
-            onClick={() => handleClick("upvote")}
-            style={{ marginRight: "10px" }}
-          >
-            <FaThumbsUp /> {upvoteCount}
-          </Button>
-
-          <Button
-            variant="light"
-            className={activeBtn === "downvote" ? "downvote-active" : ""}
-            onClick={() => handleClick("downvote")}
-          >
-            <FaThumbsDown /> {downvoteCount}
-          </Button>
-        </Col>
+        <Reactions songId={songInfo.id} user = {user} upvotes = {upvotes} downvotes = {downvotes} />
       </Row>
     </Container>
   );
