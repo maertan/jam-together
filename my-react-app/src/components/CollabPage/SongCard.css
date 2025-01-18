@@ -22,10 +22,10 @@ button {
 }
 
 .upvote-active {
-    color: greenyellow
+    color: greenyellow !important
 
 }
 
 .downvote-active {
-    color: rgb(206, 115, 115)
+    color: rgb(206, 115, 115) !important
 }
