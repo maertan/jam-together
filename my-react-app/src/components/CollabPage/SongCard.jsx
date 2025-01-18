@@ -3,8 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 import Reactions from './Reactions';
 
-function SongCard({user, songInfo, upvotes, downvotes}) {
-
+function SongCard({id, user, songInfo, upvotes, downvotes}) {
   return (
     <Container
       className="my-3 p-3" 
@@ -48,10 +47,11 @@ function SongCard({user, songInfo, upvotes, downvotes}) {
         </Col>
 
         {/* Bottom Right: Upvote / Downvote */}
-        <Reactions songId={songInfo.id} user = {user} upvotes = {upvotes} downvotes = {downvotes} />
+        <Reactions songId={songInfo.id} user={user} upvotes ={upvotes} downvotes ={downvotes} votes={songInfo.votes} />
       </Row>
     </Container>
   );
+
 }
 
 export default SongCard;
