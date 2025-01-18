@@ -2,7 +2,7 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom';
 import NavBar from "./components/NavBar";
 import HomePage from './components/HomePage/HomePage';
-import CollabPage from "./components/CollabPage"
+import CollabPage from "./components/CollabPage/CollabPage"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
