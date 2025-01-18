@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 import Reactions from './Reactions';
+import Delete from './Delete';
 
-function SongCard({id, user, songInfo, upvotes, downvotes}) {
+function SongCard({id, user, songInfo, upvotes, downvotes, handleSongLoading}) {
   return (
     <Container
       className="my-3 p-2" 

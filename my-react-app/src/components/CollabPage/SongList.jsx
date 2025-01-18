@@ -39,9 +39,10 @@ const SongList = (props) => {
                 songCards.map((song) => (
                     <SongCard 
                         user = {props.user}
-                        songInfo={{id:song.id, title: song.title, artist: song.artist,image_url: song.image_url, votes:song.votes}}
+                        songInfo={{id:song.id, title: song.title, artist: song.artist,image_url: song.image_url, votes:song.votes, owner: song.owner}}
                         upvotes= {song.upvotes}
                         downvotes = {song.downvotes}
+                        handleSongLoading={handleSongLoading} 
                     />
 
                 ))
