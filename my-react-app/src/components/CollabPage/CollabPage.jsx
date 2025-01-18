@@ -1,13 +1,14 @@
 import React from 'react';
 import './CollabPage.css';
-// import SongManagerBar from "./SongManagerBar"
+import SongManagerBar from "./SongManagerBar"
 import SongList from "./SongList"
 
 function CollabPage() {
-    return (
-        <div>     
+    return (       
+        <>     
+            <SongManagerBar />
             <SongList />
-        </div>
+        </>
     )
 }
 
