@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 import Reactions from './Reactions';
+import Delete from './Delete';
 
-function SongCard({id, user, songInfo, upvotes, downvotes}) {
+function SongCard({id, user, songInfo, upvotes, downvotes, handleSongLoading}) {
   return (
     <Container
       className="my-3 p-3" 
@@ -37,6 +38,14 @@ function SongCard({id, user, songInfo, upvotes, downvotes}) {
         <Col className="text-end">
           <h2 style={{ margin: 0 }}>{songInfo.title}</h2>
         </Col>
+
+        {/* Top Right: Song Name */}
+        <Col className="text-end">
+          {user == songInfo.owner && 
+            <Delete songId={songInfo.id} handleSongLoading={handleSongLoading}/>
+          }
+        </Col>
+
       </Row>
 
       {/* ------ BOTTOM ROW ------ */}
