@@ -13,7 +13,7 @@
   color: white;
   box-sizing: border-box; 
   z-index: 1000;
-  position: fixed;
+  /* position: fixed; */ 
   top: 0;
 
 }
@@ -34,7 +34,6 @@
 
 .site-title {
   padding-left: 1rem;
-  /* background-color: red; */
 }
 
 #logo {
