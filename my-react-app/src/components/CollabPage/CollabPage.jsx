@@ -1,6 +1,6 @@
 import React from 'react';
 import './CollabPage.css';
-// import SongManagerBar from "./SongManagerBar"
+import SongManagerBar from "./SongManagerBar"
 import SongList from "./SongList"
 import { useParams, useLocation } from 'react-router-dom';
 
@@ -21,6 +21,7 @@ function CollabPage() {
 
     return (
         <div>     
+            <SongManagerBar />
             <SongList collab_id={collab_id}/>
         </div>
     )
