@@ -3,7 +3,7 @@ const AboutBox = () => {
     <>
     <h1>About JamTogether</h1>
     <div>
-    Lorum ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      Too many songs, too little time? With JamTogether, choosing songs to sing at karaoke is easy! Simply add the songs you wish to sing and vote on songs added by your friends. Songs will be ranked in order of popularity among your friend group, faciliating a democratic process in choosing what to sing at your next karaoke session!
     </div>
     </>
   )

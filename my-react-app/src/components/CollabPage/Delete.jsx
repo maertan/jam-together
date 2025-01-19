@@ -1,7 +1,7 @@
 import './Delete.css';
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../client';
-import { RiDeleteBin6Line } from "react-icons/ri";
+import { RiDeleteBin5Line } from "react-icons/ri";
 
 const Delete = (props) => {
 
@@ -25,8 +25,8 @@ const Delete = (props) => {
     }
 
     return (
-        <button onClick={() => handleDelete()}> 
-            <RiDeleteBin6Line/>
+        <button onClick={() => handleDelete()} style={{ color: 'white', backgroundColor: '#2f4f6f' }} > 
+            <RiDeleteBin5Line style={{ color: 'white', fontSize: '28px'}} />
         </button>
     )
 }
