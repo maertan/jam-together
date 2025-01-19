@@ -36,10 +36,12 @@ function SongCard({id, user, songInfo, upvotes, downvotes, handleSongLoading}) {
         <Col xs="auto">
             <Reactions songId={songInfo.id} user={user} upvotes ={upvotes} downvotes ={downvotes} votes={songInfo.votes} />
         </Col>
-        <Col className="text-end">
-          {songInfo.owner && user == songInfo.owner && 
-            <Delete songId={songInfo.id} handleSongLoading={handleSongLoading}/>
-          }
+        <Col xs="auto" className="d-flex justify-content-between">
+            <div style={{ width: '60px' }}>
+                {songInfo.owner && user === songInfo.owner && 
+                <Delete songId={songInfo.id} handleSongLoading={handleSongLoading} />
+                }
+            </div>
         </Col>
       </Row>
     </Container>
