@@ -1,21 +1,22 @@
 import { supabase } from "../client";
 
-export async function addSong(props) {
+export async function addSong(props, owner, handleSongLoading, collab_id) {
   // Song data to be inserted, with default values for some columns
-  // The id and created_at columns will be automatically generated 
+  // The id and created_at columns will be automatically generated
+  console.log("Met at add song",props) 
   const song = {
-    artist: props.artist, 
-    title: props.title,
+    artist: props.artists[0].name, 
+    title: props.name,
     duration_ms: props.duration_ms,
-    spotify_url: props.spotify_url,
-    collab_id: props.collab_id, 
-    song_id: props.song_id,
-    image_url: props.image_url,
+    spotify_url: props.external_urls.spotify,
+    collab_id: collab_id, 
+    song_id: props.id,
+    image_url: props.album.images[0].url,
     upvotes: 0, 
     downvotes: 0, 
     votes: {},
     score: 0,
-    owner: "",
+    owner: owner,
   }
   
   // Check if a song with the same artist, title, and collab_id already exists
@@ -55,7 +56,7 @@ export async function addSong(props) {
     console.log("Song added successfully: ", song.title);
     
     // Call handleSongLoading to refresh the song list
-    props.handleSongLoading();
+    handleSongLoading();
     return song;
   }
 }
