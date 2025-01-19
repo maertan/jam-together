@@ -29,7 +29,7 @@ const JoinCollab = () => {
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Button variant="primary" onClick={handleJoinCollab} disabled={!code} className='m-2'>
+            <Button variant="primary" onClick={handleJoinCollab} disabled={!code} className='mt-2'>
               Join Collab
             </Button>
           </Form>

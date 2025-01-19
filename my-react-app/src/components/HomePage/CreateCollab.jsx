@@ -32,7 +32,7 @@ const CreateCollab = () => {
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Button variant="primary" onClick={handleCreateSession} disabled={!name} className='m-2'>
+            <Button variant="primary" onClick={handleCreateSession} disabled={!name} className='mt-2'>
               Create Collab
             </Button>
           </Form>
