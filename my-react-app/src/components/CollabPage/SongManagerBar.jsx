@@ -50,11 +50,14 @@ function SongManagerBar(props) {
           required 
           value={inputName}
           onChange={(e) => setInputName(e.target.value)}
+          onKeyDown={(e) => {if (e.key === 'Enter') {
+            handleSubmit(e);
+          }}}
           className="col-xs-1 ms-1 me-2 form-control-sm"
           style={{ minWidth: '80px' }}></Form.Control>
         <Button onClick={handleSubmit} disabled={!inputName} className="border-0" style={{fontSize: '14px', backgroundColor: 'mediumslateblue'}}>Submit</Button>
       </Form>
-      {/* <TestAddButton /> */}
+
       <div className="d-flex justify-content-end me-5" >
         <Form className="d-flex align-items-center"> 
           <Form.Control 
@@ -65,6 +68,10 @@ function SongManagerBar(props) {
             disabled={!submitPressed}
             className="col-xs-1 me-2 form-control-sm"
             style={{ minWidth: '150px' }}
+            onKeyDown={(e) => {if (e.key === 'Enter') {
+              e.preventDefault()
+              handleSearch();
+            }}}
           />
           <Button 
             onClick={handleSearch} 
