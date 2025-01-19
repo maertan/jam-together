@@ -10,6 +10,7 @@ function SongManagerBar(props) {
   const [submitPressed, setSubmitPressed] = useState(false);
   const [query, setQuery] = useState('');
   const [songsFound, setSongsFound] = useState(null);
+
   
   const handleSubmit = (e) => {
     e.preventDefault();  
@@ -74,7 +75,7 @@ function SongManagerBar(props) {
         <Button variant="outline-dark border-0" className="hover-icon"><FilterIcon /></Button>
 
         { 
-        songsFound && <SearchListPopup show={true} resetSongs={resetSongsFound} songs={songsFound}/> 
+        songsFound && <SearchListPopup show={true} resetSongs={resetSongsFound} songs={songsFound} owner={inputName} handleSongLoading={props.handleSongLoading} collab_id={props.collab_id}/> 
         }
       </div>   
     </div>
