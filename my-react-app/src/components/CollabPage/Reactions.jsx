@@ -23,21 +23,17 @@ const Reactions = (props) => {
             console.error("Error fetching votes:", error.message);
         } else {
             const currentVotes = data.votes || {};  
-            await setVotes(currentVotes);
-            await setUserVote(currentVotes[user]);  
-            if (currentVotes[user] == 1) {
-                setActiveBtn("upvote")
-            } else if (currentVotes[user] == -1) {
-                setActiveBtn("downvote");
-            }
-            await setUpvoteCount(data.upvotes);
-            await setDownvoteCount(data.downvotes);
+            setVotes(currentVotes);
+            setUserVote(currentVotes[user]);  
+            setActiveBtn(currentVotes[user] === 1 ? "upvote" : votes[user] === -1 ? "downvote" : "none");
+            setUpvoteCount(data.upvotes);
+            setDownvoteCount(data.downvotes);
         }
     };
     useEffect(() => {
  
         fetchVotes();
-    }, [props.songId, user]);
+    }, [props.user, props.songId]);
 
     //Update vote count in db
     const updateDbVotes = async (newUpvotes, newDownvotes, newVotes) => {
