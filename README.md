@@ -2,7 +2,7 @@
 
 Hack&Roll 2025 - PowerPoint Girls
 
-## JamTogether -- Democratic karaoke song chooser
+JamTogether -- Democratic karaoke song chooser
 
 ## Inspiration
 Making karaoke a democratic process for all! 
