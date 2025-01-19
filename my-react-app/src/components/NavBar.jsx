@@ -1,6 +1,6 @@
 import React from 'react';
 import appLogo from "../assets/icon.png";
-import './Navbar.css';
+import './NavBar.css';
 import { Link } from "react-router-dom";
 import { Container, Row, Col} from 'react-bootstrap';
 
