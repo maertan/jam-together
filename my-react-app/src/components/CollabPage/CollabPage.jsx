@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Container from 'react-bootstrap/Container';
 import './CollabPage.css';
 import SongManagerBar from "./SongManagerBar"
 import SongList from "./SongList"
@@ -44,10 +45,14 @@ function CollabPage() {
     }
 
     return (
-        <div>     
-            <SongManagerBar collab_id={collab_id} setUser = {setUser} handleSongLoading={handleSongLoading}/>
-            <SongList collab_id={collab_id} user={user} songCards={songCards} handleSongLoading={handleSongLoading}/>
-        </div>
+        <Container fluid>
+            <Container className="pt-2 pb-2 justify-content-center align-items-center">
+                <SongManagerBar collab_id={collab_id} setUser = {setUser} handleSongLoading={handleSongLoading}/>
+            </Container>    
+            <Container>
+                <SongList collab_id={collab_id} user={user} songCards={songCards} handleSongLoading={handleSongLoading}/>
+            </Container>
+        </Container>   
     )
 }
 
