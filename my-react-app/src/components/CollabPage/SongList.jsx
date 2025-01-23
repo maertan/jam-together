@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Container from 'react-bootstrap/Container';
 import PropTypes from 'prop-types'; 
 import './SongList.css';
 import SongCard from './SongCard.jsx';
@@ -8,7 +9,7 @@ const SongList = (props) => {
     console.log("Songlist - Final collab_id:", props.collab_id); // Debug final collab_id XHlvyF6 (L NOT I)
 
     return (
-        <div>
+        <Container>
             {
                 props.songCards.map((song) => (
                     <SongCard 
@@ -21,7 +22,7 @@ const SongList = (props) => {
 
                 ))
             }
-        </div>
+        </Container>
 
     )
 

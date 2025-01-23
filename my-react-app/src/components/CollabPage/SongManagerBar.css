@@ -1,4 +1,4 @@
-.manager-bar {
+/* .manager-bar {
   display: flex;
   width: 75%;
   height: 5vh;
@@ -7,7 +7,7 @@
   margin: 0 auto;
   padding: 3vh 0;
   box-sizing: border-box; 
-}
+} */
 
 button:hover {
   background-color:cornflowerblue !important;

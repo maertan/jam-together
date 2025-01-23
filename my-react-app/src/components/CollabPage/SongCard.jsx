@@ -11,7 +11,7 @@ function SongCard({id, user, songInfo, upvotes, downvotes, handleSongLoading}) {
       style={{
         backgroundColor: "#2f4f6f",
         borderRadius: "20px",
-        width: "75%",
+        // width: "100%",
       }}
     >      <Row className="align-items-center">
         <Col xs="auto">
