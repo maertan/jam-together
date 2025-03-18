@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Modal from "react-bootstrap/Modal";
 import { addSong } from "../../logic/addSong";
+import defaultImage from "../../assets/default.png";
 
 function SearchListPopup(props) {
 
@@ -38,15 +39,15 @@ function SearchListPopup(props) {
                     <div className="row">
                       <div className="col">
                         <img
-                          src={song.album.images[0].url}
-                          alt={song.name}
-                          style={{
-                            width: "5em",
-                            height: "5em",
-                            objectFit: "cover",
-                            borderRadius: "10%",
-                          }}
-                        />
+                        src={song.album?.images?.[0]?.url || defaultImage}
+                        alt={song.name}
+                        style={{
+                          width: "5em",
+                          height: "5em",
+                          objectFit: "cover",
+                          borderRadius: "10%",
+                        }}
+                      />
                       </div>
                       <div className="col">{song.name}</div>
                       <div className="col">{song.artists[0].name}</div>

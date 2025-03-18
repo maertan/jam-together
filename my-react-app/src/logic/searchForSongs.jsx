@@ -31,7 +31,7 @@ export async function searchForSongs(searchString) {
     
           try {
             const response = await axios.get(
-              `https://api.spotify.com/v1/search?q=track:${searchString}&type=track&limit=8`,
+              `https://api.spotify.com/v1/search?q=${searchString}&type=track&limit=8`,
               {
                 headers: {
                   Authorization: `Bearer ${token}`,
