@@ -27,7 +27,7 @@ function SongManagerBar(props) {
     }
 
     // Format query string for Spotify API Search Request
-    const queryString = trimmedQuery.replace(" ", "+");
+    const queryString = encodeURIComponent(trimmedQuery)
 
     try {
       setSongsFound(await searchForSongs(queryString));
@@ -79,7 +79,9 @@ function SongManagerBar(props) {
               onClick={handleSearch} 
               disabled={!submitPressed}
               className="border-0" 
-              style={{fontSize: '14px', backgroundColor: 'mediumslateblue'}}>Search</Button>
+              style={{fontSize: '14px', backgroundColor: 'mediumslateblue'}}>
+              Search
+            </Button>
           </Form>
           { 
           songsFound && <SearchListPopup show={true} resetSongs={resetSongsFound} songs={songsFound} owner={inputName} handleSongLoading={props.handleSongLoading} collab_id={props.collab_id}/> 

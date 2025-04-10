@@ -46,17 +46,15 @@ export async function addSong(props, owner, handleSongLoading, collab_id) {
 
   if (insertError) {
     // Additional check that no foreign key constraint or uniqueness violation is made 
-    if (insertError.code === '23505' || insertError.code === '23503') {
-      console.log("Foreign key or uniqueness constraint violated during insert. Song not added.", insertError);
-    } else {
+    // if (insertError.code === '23505' || insertError.code === '23503') {
+    //   console.log("Foreign key or uniqueness constraint violated during insert. Song not added.", insertError);
+    // } else {
       console.log("Error adding song: ", insertError);
-    }
+    
     return null;
   } else {
     console.log("Song added successfully: ", song.title);
     
-    // Call handleSongLoading to refresh the song list
-    handleSongLoading();
     return song;
   }
 }
