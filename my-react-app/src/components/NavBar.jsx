@@ -10,11 +10,11 @@ function NavBar() {
       <Row className="align-items-center" >
         <Col xs="auto">
             <Link to="/">
-              <img src={appLogo} alt="JamTogether Icon" id="logo" />
+              <img src={appLogo} alt="JamTogether Icon" style={{ width:'100px', height:'100px' }}  />
             </Link>
           </Col>
           <Col>
-            <Link to="/" className="site-title" style={{ textDecoration: 'none' }}>
+            <Link to="/" style={{ paddingLeft: '1rem', textDecoration: 'none' }}>
               <h1 style={{ color: 'white' }}>JamTogether</h1>
             </Link>
           </Col>
